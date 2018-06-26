@@ -1,0 +1,32 @@
+
+  <div class="wrapper">
+    <h1>Pet Shelter</h1>
+    <h3>These pets are looking for a home</h3>
+
+    <!-- <form (submit)="someFunctionHere(someNameHere)" #someNameHere="ngForm">
+                <input type="text" name="name" ngModel>
+                <input type="text" name="email" ngModel>
+                <input type="submit">
+        </form>         -->
+
+
+
+        <a [routerLink]="['/pets/new']">Add a pet to the shelter</a><br>
+        <div class="allPets">
+        <table>
+          <tr>
+            <td>Name</td>
+            <td>Type</td>
+            <td>Actions</td>
+          </tr>
+          <tr *ngFor='let pet of Pets'>
+            <td>{{ pet.name }}</td>
+            <td>{{ pet.type }}</td>
+            <td> <button routerLink="/pets/detail/{{ pet._id }}">Details</button> 
+                <button routerLink="/pets/update/{{ pet._id }}">Edit</button>
+            </td>
+          </tr>
+        </table>
+        
+      </div>
+    </div>

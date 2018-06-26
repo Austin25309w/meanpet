@@ -1,0 +1,54 @@
+<h1>Edit {{ pet.name }} info</h1>
+<div class = "edit_form">
+<form (submit)='editThis(thisForm)' #thisForm='ngForm'>
+<h4>Name:
+    <input type="text" name="name" [(ngModel)]= "pet.name">
+</h4>
+
+<h4>Type:
+    <input type="text" name="type" [(ngModel)]= "pet.type">
+</h4>
+
+<h4>Description:
+    <input type="text" name="description" [(ngModel)]= "pet.description">
+</h4>
+
+<h3>Skills</h3>
+<h4>skill 1:
+    <input type="text" name="skills_1" [(ngModel)]= "pet.skills_1">
+</h4>
+<h4>skill 2:
+        <input type="text" name="skills_2" [(ngModel)]= "pet.skills_2">
+</h4>
+<h4>skill 3:
+        <input type="text" name="skills_3" [(ngModel)]= "pet.skills_3">
+    </h4>
+
+<input type="submit" value="Update pet info">
+<button [routerLink]="['/pets']">cancel</button>
+</form>
+</div>
+
+<!-- <form (submit)="editThis(editFormData)" class="postForm" #editFormData="ngForm">
+
+    <div>
+      <h3>Edit pet info</h3>
+      <p>{{ modifyPet | json}}</p>
+      <h4>edit pet name:
+        <input type="text" name="name" [(ngModel)]="modifyPet.name">
+      </h4>
+      <h4>edit pet type:
+        <input type="text" name="type" [(ngModel)]="modifyPet.type">
+      </h4>
+      <h4>Description:
+        <input type="text" name="description" [(ngModel)]="modifyPet.description">
+      </h4>
+      <input type="submit" value="Update Pet">
+    </div>
+  </form>
+  <!- </ul> -->
+  <!-- // show TEXT -->
+  <!-- <ul *ngIf="show">
+    <p>Title:{{ selectedPet.name }}</p>
+    <p>Description:{{ selectedPet.description }}</p>
+  </ul> --> 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>New Pet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <form (submit)='newPet(myForm)' #myForm='ngForm'>
+
+      <h1>Add a pet</h1>
+      <!-- <p> {{ pet | json }} </p>    -->
+      <p *ngIf="errorMsg.name" class="error">{{ errorMsg.name.message }}</p>
+      <p *ngIf="errorMsg.type" class="error">{{ errorMsg.type.message }}</p>
+      
+      <h4>Pet name: 
+        <input type="text" name="name" ngModel></h4>
+      <h4>Pet type:
+        <input type="text" name="type" ngModel></h4>
+      <h4>Description:
+        <input type="text" name="description" ngModel></h4>
+      Skills <br><br>
+      Skill 1: <input type="text" name="skills_1" ngModel><br><br>
+      Skill 2: <input type="text" name="skills_2" ngModel><br><br>
+      Skill 3: <input type="text" name="skills_3" ngModel><br><br>
+      <input type="submit" value="Add New Pet">
+      <button [routerLink] = "['/pets']">Cancel</button>
+
+      
+
+    </form>
+    
+  </div>
+  
+</body>
+</html>
+
+<!-- 
+
+<form (submit)="onSubmit(createFormData)" #createFormData="ngForm">
+
+    <div>
+      
+      <h4>Pet name:
+        <input type="text" ngModel name="name" />
+      </h4>
+      <h4>Pet type:
+        <input type="text" ngModel name="type" />
+      </h4>
+      <h4>Description:
+        <input type="text" ngModel name="description" />
+      </h4>
+
+
+      <h4>Skills:
+        <p>Skill1
+          <input type="text" name="skill_1">
+        </p>
+        <p>Skill2
+          <input type="text" name="skill_2">
+        </p>
+        <p>Skill3
+          <input type="text" name="skill_3">
+        </p>
+        <input type="submit" value="Add a pet">
+      </h4>
+    </div>
+  </form> -->
